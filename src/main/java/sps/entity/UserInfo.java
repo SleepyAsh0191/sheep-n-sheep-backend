@@ -1,4 +1,4 @@
-package sps;
+package sps.entity;
 
 import lombok.Data;
 

@@ -1,4 +1,4 @@
-package sps;
+package sps.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -6,12 +6,11 @@ import lombok.Data;
 /**
  * @author 舞晗坤
  * @email whksoft@gmail.com
- * @since 2022/9/15 15:38
+ * @since 2022/9/15 15:41
  */
 @Data
 @AllArgsConstructor
-public class Response<T> {
-    Integer err_code;
-    String err_msg;
-    T data;
+public class UserRankInfo {
+    String region;
+    User user;
 }
