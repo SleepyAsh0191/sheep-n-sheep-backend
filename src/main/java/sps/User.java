@@ -14,7 +14,7 @@ public class User {
     Integer uid = 114514;
     String nickname = "田所浩二";
     Integer time = 114514;
-    String avatar = "https://baidu.com";
+    String avatar = "http://127.0.0.1:5500/YJSNPI.png";
     Integer skin = 1;
     String city = "下北泽";
     String region = "东京都";
