@@ -4,6 +4,8 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 import sps.config.GlobalConfig;
 import sps.entity.MapData;
 
@@ -25,8 +27,8 @@ public class IDKWhatIsUtil {
 
     public String getMapData() throws IOException, URISyntaxException {
         //return restTemplate.getForObject("https://cat-match.easygame2021.com/admin/game_map/page", String.class);
-        URL map = getClass().getClassLoader().getResource("game_map.json");
-        assert map != null;
+        Resource resource = new ClassPathResource("game_map.json");
+        URL map = resource.getURL();
         return new String(Files.readAllBytes(Paths.get(map.toURI())));
     }
 
