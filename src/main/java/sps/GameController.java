@@ -9,6 +9,8 @@ import sps.config.GlobalConfig;
 import sps.entity.*;
 
 import javax.annotation.Resource;
+import java.io.IOException;
+import java.net.URISyntaxException;
 
 /**
  * @author 舞晗坤
@@ -20,7 +22,7 @@ import javax.annotation.Resource;
 @RequestMapping("/sheep/v1/game")
 public class GameController {
     @RequestMapping("/map_info")
-    public Response<MapData> getMapData(@RequestParam("map_id") Integer id) {
+    public Response<MapData> getMapData(@RequestParam("map_id") Integer id) throws IOException, URISyntaxException {
         Response<MapData> m_80001 = new Response<>(0, "", new MapData("62ccde7d3dd1931da84a84e2", 80001, "2022-09-14T15:53:23.508Z", "{\"widthNum\":8,\"heightNum\":10,\"levelKey\":80001,\"blockTypeData\":{\"1\":2,\"4\":1,\"13\":2},\"levelData\":{\"1\":[{\"id\":\"1-16-16\",\"type\":0,\"rolNum\":16,\"rowNum\":16,\"layerNum\":1,\"moldType\":1,\"blockNode\":null},{\"id\":\"1-28-16\",\"type\":0,\"rolNum\":28,\"rowNum\":16,\"layerNum\":1,\"moldType\":1,\"blockNode\":null},{\"id\":\"1-40-16\",\"type\":0,\"rolNum\":40,\"rowNum\":16,\"layerNum\":1,\"moldType\":1,\"blockNode\":null},{\"id\":\"1-16-32\",\"type\":0,\"rolNum\":16,\"rowNum\":32,\"layerNum\":1,\"moldType\":1,\"blockNode\":null},{\"id\":\"1-28-32\",\"type\":0,\"rolNum\":28,\"rowNum\":32,\"layerNum\":1,\"moldType\":1,\"blockNode\":null},{\"id\":\"1-40-32\",\"type\":0,\"rolNum\":40,\"rowNum\":32,\"layerNum\":1,\"moldType\":1,\"blockNode\":null},{\"id\":\"1-16-48\",\"type\":0,\"rolNum\":16,\"rowNum\":48,\"layerNum\":1,\"moldType\":2,\"blockNode\":null},{\"id\":\"1-28-48\",\"type\":0,\"rolNum\":28,\"rowNum\":48,\"layerNum\":1,\"moldType\":2,\"blockNode\":null},{\"id\":\"1-40-48\",\"type\":0,\"rolNum\":40,\"rowNum\":48,\"layerNum\":1,\"moldType\":2,\"blockNode\":null}],\"2\":[{\"id\":\"2-16-49\",\"type\":0,\"rolNum\":16,\"rowNum\":49,\"layerNum\":2,\"moldType\":2,\"blockNode\":null},{\"id\":\"2-28-49\",\"type\":0,\"rolNum\":28,\"rowNum\":49,\"layerNum\":2,\"moldType\":2,\"blockNode\":null},{\"id\":\"2-40-49\",\"type\":0,\"rolNum\":40,\"rowNum\":49,\"layerNum\":2,\"moldType\":2,\"blockNode\":null},{\"id\":\"2-16-20\",\"type\":1,\"rolNum\":16,\"rowNum\":20,\"layerNum\":2,\"moldType\":1,\"blockNode\":null},{\"id\":\"2-28-20\",\"type\":1,\"rolNum\":28,\"rowNum\":20,\"layerNum\":2,\"moldType\":1,\"blockNode\":null},{\"id\":\"2-40-20\",\"type\":1,\"rolNum\":40,\"rowNum\":20,\"layerNum\":2,\"moldType\":1,\"blockNode\":null},{\"id\":\"2-16-36\",\"type\":0,\"rolNum\":16,\"rowNum\":36,\"layerNum\":2,\"moldType\":1,\"blockNode\":null},{\"id\":\"2-28-36\",\"type\":0,\"rolNum\":28,\"rowNum\":36,\"layerNum\":2,\"moldType\":1,\"blockNode\":null},{\"id\":\"2-40-36\",\"type\":0,\"rolNum\":40,\"rowNum\":36,\"layerNum\":2,\"moldType\":1,\"blockNode\":null}]}}", "2022-07-12T02:37:49.515Z"));
         if (id == 80001) return m_80001;
         if (GlobalConfig.hardCode) {

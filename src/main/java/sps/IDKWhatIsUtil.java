@@ -4,11 +4,16 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import org.springframework.web.client.RestTemplate;
 import sps.config.GlobalConfig;
 import sps.entity.MapData;
 
-import javax.annotation.Resource;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Calendar;
 
 /**
@@ -17,15 +22,16 @@ import java.util.Calendar;
  * @since 2022/9/16 8:30
  */
 public class IDKWhatIsUtil {
-    @Resource
-    RestTemplate restTemplate = new RestTemplate();
 
-    public String getMapData() {
-        return restTemplate.getForObject("https://cat-match.easygame2021.com/admin/game_map/page", String.class);
+    public String getMapData() throws IOException, URISyntaxException {
+        //return restTemplate.getForObject("https://cat-match.easygame2021.com/admin/game_map/page", String.class);
+        URL map = getClass().getClassLoader().getResource("game_map.json");
+        assert map != null;
+        return new String(Files.readAllBytes(Paths.get(map.toURI())));
     }
 
     //已备份数据，但是此接口可能会和谐
-    public void updateData() {
+    public void updateData() throws IOException, URISyntaxException {
         Calendar cal = Calendar.getInstance();
         //一天一变，只记录日即可
         int day = cal.get(Calendar.DATE);

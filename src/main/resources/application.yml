@@ -1,6 +1,6 @@
 sheep:
   #此项目设置为false后，取消关卡硬编码
-  hard-code: true
+  hard-code: false
 
 #用户自定义信息尚未实现
 user:
