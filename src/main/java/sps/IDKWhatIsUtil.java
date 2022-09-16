@@ -6,14 +6,14 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
+import org.springframework.util.FileCopyUtils;
 import sps.config.GlobalConfig;
 import sps.entity.MapData;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Calendar;
@@ -28,8 +28,8 @@ public class IDKWhatIsUtil {
     public String getMapData() throws IOException, URISyntaxException {
         //return restTemplate.getForObject("https://cat-match.easygame2021.com/admin/game_map/page", String.class);
         Resource resource = new ClassPathResource("game_map.json");
-        URL map = resource.getURL();
-        return new String(Files.readAllBytes(Paths.get(map.toURI())));
+        Reader reader = new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8);
+        return FileCopyUtils.copyToString(reader);
     }
 
     //已备份数据，但是此接口可能会和谐
