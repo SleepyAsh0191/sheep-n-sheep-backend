@@ -9,7 +9,7 @@ import lombok.AllArgsConstructor;
  */
 @lombok.Data
 @AllArgsConstructor
-public class Data {
+public class MapData {
     String id;
     Integer map_id;
     String updated_at;

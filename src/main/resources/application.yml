@@ -1,0 +1,3 @@
+sheep:
+  #此项目设置为false后，取消关卡硬编码
+  hard-code: false
