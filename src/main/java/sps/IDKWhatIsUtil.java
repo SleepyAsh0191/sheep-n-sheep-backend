@@ -4,8 +4,8 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
+import sps.config.GlobalConfig;
 import sps.entity.MapData;
 
 import javax.annotation.Resource;

@@ -1,4 +1,4 @@
-package sps;
+package sps.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

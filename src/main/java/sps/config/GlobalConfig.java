@@ -1,4 +1,4 @@
-package sps;
+package sps.config;
 
 import org.apache.coyote.Request;
 import org.springframework.beans.factory.annotation.Value;
