@@ -1,3 +1,9 @@
 sheep:
   #此项目设置为false后，取消关卡硬编码
-  hard-code: false
+  hard-code: true
+
+#用户自定义信息尚未实现
+user:
+  uid: 114514
+  nickname: 田所浩二
+  avatar: baidu.com
