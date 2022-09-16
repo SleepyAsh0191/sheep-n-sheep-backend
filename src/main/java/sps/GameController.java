@@ -17,7 +17,7 @@ import javax.annotation.Resource;
 @RestController
 @CrossOrigin
 @RequestMapping("/sheep/v1/game")
-public class MapDataController {
+public class GameController {
     @RequestMapping("/map_info")
     public Response<MapData> getMapData(@RequestParam("map_id") Integer id) {
         Response<MapData> m_80001 = new Response<>(0, "", new MapData("62ccde7d3dd1931da84a84e2", 80001, "2022-09-14T15:53:23.508Z", "{\"widthNum\":8,\"heightNum\":10,\"levelKey\":80001,\"blockTypeData\":{\"1\":2,\"4\":1,\"13\":2},\"levelData\":{\"1\":[{\"id\":\"1-16-16\",\"type\":0,\"rolNum\":16,\"rowNum\":16,\"layerNum\":1,\"moldType\":1,\"blockNode\":null},{\"id\":\"1-28-16\",\"type\":0,\"rolNum\":28,\"rowNum\":16,\"layerNum\":1,\"moldType\":1,\"blockNode\":null},{\"id\":\"1-40-16\",\"type\":0,\"rolNum\":40,\"rowNum\":16,\"layerNum\":1,\"moldType\":1,\"blockNode\":null},{\"id\":\"1-16-32\",\"type\":0,\"rolNum\":16,\"rowNum\":32,\"layerNum\":1,\"moldType\":1,\"blockNode\":null},{\"id\":\"1-28-32\",\"type\":0,\"rolNum\":28,\"rowNum\":32,\"layerNum\":1,\"moldType\":1,\"blockNode\":null},{\"id\":\"1-40-32\",\"type\":0,\"rolNum\":40,\"rowNum\":32,\"layerNum\":1,\"moldType\":1,\"blockNode\":null},{\"id\":\"1-16-48\",\"type\":0,\"rolNum\":16,\"rowNum\":48,\"layerNum\":1,\"moldType\":2,\"blockNode\":null},{\"id\":\"1-28-48\",\"type\":0,\"rolNum\":28,\"rowNum\":48,\"layerNum\":1,\"moldType\":2,\"blockNode\":null},{\"id\":\"1-40-48\",\"type\":0,\"rolNum\":40,\"rowNum\":48,\"layerNum\":1,\"moldType\":2,\"blockNode\":null}],\"2\":[{\"id\":\"2-16-49\",\"type\":0,\"rolNum\":16,\"rowNum\":49,\"layerNum\":2,\"moldType\":2,\"blockNode\":null},{\"id\":\"2-28-49\",\"type\":0,\"rolNum\":28,\"rowNum\":49,\"layerNum\":2,\"moldType\":2,\"blockNode\":null},{\"id\":\"2-40-49\",\"type\":0,\"rolNum\":40,\"rowNum\":49,\"layerNum\":2,\"moldType\":2,\"blockNode\":null},{\"id\":\"2-16-20\",\"type\":1,\"rolNum\":16,\"rowNum\":20,\"layerNum\":2,\"moldType\":1,\"blockNode\":null},{\"id\":\"2-28-20\",\"type\":1,\"rolNum\":28,\"rowNum\":20,\"layerNum\":2,\"moldType\":1,\"blockNode\":null},{\"id\":\"2-40-20\",\"type\":1,\"rolNum\":40,\"rowNum\":20,\"layerNum\":2,\"moldType\":1,\"blockNode\":null},{\"id\":\"2-16-36\",\"type\":0,\"rolNum\":16,\"rowNum\":36,\"layerNum\":2,\"moldType\":1,\"blockNode\":null},{\"id\":\"2-28-36\",\"type\":0,\"rolNum\":28,\"rowNum\":36,\"layerNum\":2,\"moldType\":1,\"blockNode\":null},{\"id\":\"2-40-36\",\"type\":0,\"rolNum\":40,\"rowNum\":36,\"layerNum\":2,\"moldType\":1,\"blockNode\":null}]}}", "2022-07-12T02:37:49.515Z"));
@@ -60,5 +60,22 @@ public class MapDataController {
     @RequestMapping("/rank_info")
     public Object getRankInfo() {
         return restTemplate.getForObject("https://cat-match.easygame2021.com/sheep/v1/game/rank_info", Object.class);
+    }
+
+    @RequestMapping("/rank_info_byte")
+    public String getRankInfoByte() {
+        return restTemplate.getForObject("https://cat-match.easygame2021.com/sheep/v1/game/rank_info_byte", String.class);
+    }
+
+    @RequestMapping("/get_topic")
+    public Response<TopicData> getTopic() {
+        TopicData data = new TopicData();
+        data.setInfo(new TopicInfo());
+        return new Response<>(0, "", data);
+    }
+
+    @RequestMapping("/topic_join")
+    public Response<Integer> topicJoin() {
+        return new Response<>(0, "", 0);
     }
 }
