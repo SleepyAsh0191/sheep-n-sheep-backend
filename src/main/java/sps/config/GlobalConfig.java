@@ -15,9 +15,16 @@ import java.util.HashMap;
 @Configuration
 public class GlobalConfig {
     @Value("${sheep.hard-code}")
-    public static boolean hardCode;
+    public boolean hardCode;
+
+    @Value("${topic.id}")
+    public int topicId;
+    @Value("${topic.name}")
+    public String topicName;
 
     public static HashMap<Integer, MapData> gameMap = new HashMap<>();
 
-    public static int requested = 0;
+    public int requested = 0;
+
+
 }

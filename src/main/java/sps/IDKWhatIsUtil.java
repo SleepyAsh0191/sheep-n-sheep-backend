@@ -22,6 +22,9 @@ import java.util.Calendar;
  */
 public class IDKWhatIsUtil {
 
+    @javax.annotation.Resource
+    GlobalConfig config = new GlobalConfig();
+
     public String getMapData() throws IOException, URISyntaxException {
         //return restTemplate.getForObject("https://cat-match.easygame2021.com/admin/game_map/page", String.class);
         Resource resource = new ClassPathResource("game_map.json");
@@ -34,9 +37,9 @@ public class IDKWhatIsUtil {
         Calendar cal = Calendar.getInstance();
         //一天一变，只记录日即可
         int day = cal.get(Calendar.DATE);
-        if(GlobalConfig.requested == day) return;
-        GlobalConfig.requested = day;
-        if (!GlobalConfig.hardCode) {
+        if(config.requested == day) return;
+        config.requested = day;
+        if (!config.hardCode) {
             String mapData = getMapData();
             JsonObject json = new Gson().fromJson(mapData, JsonObject.class);
             JsonArray dataArray = json.getAsJsonArray("data");

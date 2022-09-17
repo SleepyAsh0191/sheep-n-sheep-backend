@@ -1,6 +1,8 @@
 package sps.entity;
 
 import lombok.Data;
+import org.springframework.beans.factory.annotation.Value;
+import sps.config.GlobalConfig;
 
 /**
  * @author 舞晗坤
@@ -9,8 +11,8 @@ import lombok.Data;
  */
 @Data
 public class TopicData {
-    String name = "狼人#吸血鬼";
-    Integer id = 2;
+    String name = "僵尸#道士";
+    Integer id = 0;
     String ts = "20220917";
     Integer tomb = 0;
     Integer taoist = 0;
