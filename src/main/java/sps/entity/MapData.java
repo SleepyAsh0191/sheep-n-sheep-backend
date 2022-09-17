@@ -1,13 +1,14 @@
 package sps.entity;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 
 /**
  * @author 舞晗坤
  * @email whksoft@gmail.com
  * @since 2022/9/15 12:58
  */
-@lombok.Data
+@Data
 @AllArgsConstructor
 public class MapData {
     String id;

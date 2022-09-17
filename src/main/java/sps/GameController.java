@@ -61,8 +61,9 @@ public class GameController {
     private RestTemplate restTemplate;
 
     @RequestMapping("/rank_info")
-    public Object getRankInfo() {
-        return restTemplate.getForObject("https://cat-match.easygame2021.com/sheep/v1/game/rank_info", Object.class);
+    public Response<RankInfo> getRankInfo() {
+        return new Response<>(0, "", new RankInfo());
+        //return restTemplate.getForObject("https://cat-match.easygame2021.com/sheep/v1/game/rank_info", Object.class);
     }
 
     @RequestMapping("/rank_info_byte")
@@ -80,5 +81,10 @@ public class GameController {
     @RequestMapping("/topic_join")
     public Response<Integer> topicJoin() {
         return new Response<>(0, "", 0);
+    }
+
+    @RequestMapping("/topic_rank")
+    public Response<TopicRank> topicRank() {
+        return new Response<>(0, "", new TopicRank());
     }
 }

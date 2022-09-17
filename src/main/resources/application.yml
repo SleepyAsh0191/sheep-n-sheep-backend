@@ -7,3 +7,9 @@ user:
   uid: 114514
   nickname: 田所浩二
   avatar: baidu.com
+
+#话题设置
+topic:
+  id: 2
+  red: 狼人
+  blue: 吸血鬼
