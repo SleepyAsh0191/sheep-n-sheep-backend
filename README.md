@@ -12,6 +12,8 @@
 
 特别感谢：[george-jiang-wow的前端仓库](https://github.com/george-jiang-wow/yanglegeyang)
 
+友情二创：[鸡了个鸡](https://github.com/oldyue/chicken)
+
 ### 截图：  
 个人信息  
 ![image](https://user-images.githubusercontent.com/64446140/190565880-ebde7b50-e172-44c8-b4fa-ca4ff154d7e4.png)  
